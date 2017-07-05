@@ -1,4 +1,4 @@
-@import "../../colors";
+@import "../../../colors";
 
 .users-list {
     background: $navBackground;
@@ -14,5 +14,8 @@
     a{
         color: $fontColor;
         text-decoration: none;
+    }
+    .activeLink {
+        text-decoration: underline;
     }
 }

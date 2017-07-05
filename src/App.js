@@ -1,17 +1,22 @@
 import React from 'react';
 import {Route} from 'react-router';
 
-import NavBar from './NavBar/NavBar';
-import About from './about/About';
-import Users from './users/Users';
+import Login from './login/login';
+import Social from './social/Social';
+import AuthRoute from './AuthRoute';
 
 export default class App extends React.Component{
     render(){
         return (
             <div>
-                <NavBar/>
-                <Route exact path="/" component={About} />
-                <Route path="/user" component={Users}/>
+                <AuthRoute
+                    path=""
+                    component={Social}
+                />
+                <Route
+                    path="/login"
+                    component={Login}
+                />
             </div>
         )
     }

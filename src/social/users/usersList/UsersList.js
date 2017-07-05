@@ -1,8 +1,9 @@
 import React from "react";
-import UserService from "../../services/UserService";
+import {withRouter} from 'react-router';
+import UserService from "../../../services/UserService";
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
-import {addUsersList, selectUser} from '../../actions/creators';
+import {NavLink} from 'react-router-dom';
+import {addUsersList, selectUser} from '../../../actions/creators';
 
 import "./users-list.scss";
 
@@ -15,6 +16,9 @@ class UsersList extends React.Component {
             .getAllUsers()
             .then( this.onAllUsers.bind(this) )
     }
+    shouldComponentUpdate(){
+        return true
+    }
 
     onAllUsers(usersList){
         this.props.addUsers(usersList);
@@ -22,7 +26,7 @@ class UsersList extends React.Component {
 
     renderUser(user, i){
         return <li key={i}>
-            <Link to={`/user/${user.id}`}> { user.name }</Link>
+            <NavLink activeClassName="activeLink" to={`/user/${user.id}`}> { user.name }</NavLink>
             </li>
     }
 
@@ -46,11 +50,12 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispachToProps(dispach){
+function mapDispatchToProps(dispatch){
     return {
-        addUsers: (users) => dispach(addUsersList(users)),
-        onSelectedUser: (user) => dispach(selectUser(user))
+        addUsers: (users) => dispatch(addUsersList(users)),
+        onSelectedUser: (user) => dispatch(selectUser(user))
     }
 }
 
-export default connect(mapStateToProps, mapDispachToProps)(UsersList);
+let connected = connect(mapStateToProps, mapDispatchToProps)(UsersList);
+export default withRouter(connected);

@@ -5,12 +5,12 @@ import UsersList from "./usersList/UsersList";
 
 import {Route} from 'react-router';
 
-import '../main.scss';
+import '../../main.scss';
 
 class Users extends React.Component {
     render(){
         return (<div>
-                    <UsersList/>
+                    <UsersList />
                     <Route path="/user/:id" component={UserPage}/>
                 </div>)
     }
