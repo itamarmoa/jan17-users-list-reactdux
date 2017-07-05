@@ -1,7 +1,8 @@
 import React from "react";
-import UserService from "../services/UserService";
+import UserService from "../../services/UserService";
 import {connect} from 'react-redux';
-import {addUsersList, selectUser} from '../actions/creators';
+import {Link} from 'react-router-dom';
+import {addUsersList, selectUser} from '../../actions/creators';
 
 import "./users-list.scss";
 
@@ -20,7 +21,9 @@ class UsersList extends React.Component {
     }
 
     renderUser(user, i){
-        return <li key={i} onClick={ ()=> this.selectUser(user) }>{ user.name }</li>
+        return <li key={i}>
+            <Link to={`/user/${user.id}`}> { user.name }</Link>
+            </li>
     }
 
     selectUser(user){

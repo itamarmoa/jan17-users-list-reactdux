@@ -1,10 +1,13 @@
-@import "../colors.scss";
+@import "../../colors";
 
 .user-page {
+    width: 539px;
+    position: absolute;
+    top: $topDistance;
     background: $mainBackground;
     padding: 20px;
     margin: 20px;
-    margin-left: 250px;
+    margin-left: 231px;
 
 
     dt {

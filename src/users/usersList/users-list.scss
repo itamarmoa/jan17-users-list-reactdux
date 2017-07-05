@@ -1,4 +1,4 @@
-@import "../colors";
+@import "../../colors";
 
 .users-list {
     background: $navBackground;
@@ -8,6 +8,11 @@
     margin: 20px;
     width: 150px;
     position: absolute;
-    top: 0;
+    top: $topDistance;
     left: 0;
+
+    a{
+        color: $fontColor;
+        text-decoration: none;
+    }
 }

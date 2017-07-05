@@ -7,7 +7,6 @@ class PostsService{
     }
 
     getPosts(userId){
-        console.log("requested user", userId);
         return $.get(this.url + userId);
     }
 

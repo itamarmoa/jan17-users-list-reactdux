@@ -1,0 +1,19 @@
+@import "../colors";
+
+.about-page {
+    position: absolute;
+    top: $topDistance;
+    background: $mainBackground;
+    padding: 20px;
+    margin: 20px;
+    width: 750px;
+    min-height: 500px;
+
+    dt {
+        font-weight: 500;
+    }
+
+    h1, h2, h3 {
+        margin: 10px 0;
+    }
+}

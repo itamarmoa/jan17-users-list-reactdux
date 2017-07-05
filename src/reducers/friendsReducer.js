@@ -1,10 +1,11 @@
-import { ADD_USERS_LIST, ADD_USER, REMOVE_USER, SELECT_USER } from '../actions';
+import { ADD_USERS_LIST, ADD_USER, REMOVE_USER } from '../actions';
 import { combineReducers } from 'redux';
+import selectedUserReducer from './selectedUserReducer';
 
 function usersListReducer(state = [], action){
     switch (action.type){
         case ADD_USERS_LIST:
-            return [...state, ...action.usersList];
+            return [...action.usersList];
         case ADD_USER:
             return [...state, action.user];
         case REMOVE_USER:
@@ -13,17 +14,7 @@ function usersListReducer(state = [], action){
     return state;
 }
 
-function selectedUserReducer(state = {}, action){
-    switch (action.type){
-        case SELECT_USER:
-            return {details: action.user};
-        case REMOVE_USER:
-            return state == action.user ? null : state;
-    }
-    return state;
-}
-
 export default combineReducers({
     usersList: usersListReducer,
     selectedUser: selectedUserReducer
-});
+})

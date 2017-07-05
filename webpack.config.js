@@ -33,7 +33,7 @@ module.exports = {
             },
 
             {
-                test: /\.jpg$/,
+                test: /\.(jpg|png)$/,
                 use: {
                     loader: "file-loader",
                     query: {
@@ -45,6 +45,10 @@ module.exports = {
     },
 
     devtool: "source-map",
+
+    devServer: {
+        historyApiFallback: true
+    },
 
     plugins: [
         new HtmlWebpackPlugin({

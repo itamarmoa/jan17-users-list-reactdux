@@ -1,26 +1,18 @@
-import React from "react";
-import {connect} from 'react-redux';
-import UserPage from "./userPage/UserPage";
-import UsersList from "./usersList/UsersList";
+import React from 'react';
+import {Route} from 'react-router';
 
-import './main.scss';
+import NavBar from './NavBar/NavBar';
+import About from './about/About';
+import Users from './users/Users';
 
-class App extends React.Component {
+export default class App extends React.Component{
     render(){
-        return (<div>
-                    <UsersList />
-                    <UserPage
-                        user={ this.props.selectedUser.details }
-                        posts={ this.props.selectedUser.posts }
-                    />
-                </div>)
+        return (
+            <div>
+                <NavBar/>
+                <Route exact path="/" component={About} />
+                <Route path="/user" component={Users}/>
+            </div>
+        )
     }
 }
-
-function mapStateToProps(state){
-    return {
-        selectedUser: state.friends.selectedUser
-    }
-}
-
-export default connect(mapStateToProps, null)(App);
