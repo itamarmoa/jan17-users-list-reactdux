@@ -7,7 +7,7 @@ class LoginService{
     }
     get(){
         let obj = localStorage.getItem(LoggedInUser);
-        return JSON.parse(objs);
+        return JSON.parse(obj);
     }
 }
 
