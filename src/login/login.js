@@ -2,14 +2,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router';
 import {loginUser, logoutUser} from '../actions/creators';
+import LoginService from '../services/LoginService';
 
 import './login.scss';
 
 class Login extends React.Component{
     logIn(){
-        this.props.login({
-            name: this.input.value
-        });
+        let user = { name: this.input.value };
+        LoginService.set(user);
+        this.props.login(user);
     }
     render(){
         if(!this.props.isLoggedIn){
