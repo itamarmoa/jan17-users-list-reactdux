@@ -3,4 +3,5 @@ export const ADD_USER = "add";
 export const REMOVE_USER = "remove";
 export const LOGIN_USER = "login";
 export const LOGOUT_USER = "logout";
-export const ADD_USERS_LIST = "add-users-list";
+export const GET_USERS_LIST_REQUEST = "get-users-list-request";
+export const GET_USERS_LIST_RESPONSE = "get-users-list-response";

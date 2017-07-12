@@ -1,8 +1,5 @@
 import * as ACTION from '../actions';
 
-export function addUsersList(usersList){
-    return { type: ACTION.ADD_USERS_LIST, usersList };
-}
 export function selectUser(user) {
     return {type: ACTION.SELECT_USER, user};
 }

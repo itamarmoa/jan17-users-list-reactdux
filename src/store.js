@@ -1,6 +1,8 @@
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 import appReducers from './reducers'
 import LoginService from './services/LoginService';
+import Thunk from 'redux-thunk';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
 const state = {
     loggedInUser: LoginService.get(),
@@ -11,12 +13,15 @@ const state = {
             posts: [
 
             ]
-        }
+        },
+        isUsersListLoading: false
     }
 };
+
+let middlewares = applyMiddleware(Thunk);
 
 export default createStore(
     appReducers,
     state,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    composeWithDevTools(middlewares)
 );
