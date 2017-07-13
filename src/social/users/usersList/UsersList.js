@@ -16,10 +16,6 @@ class UsersList extends React.Component {
     }
 
 
-    // shouldComponentUpdate(){
-    //     return true
-    // }
-
     renderUser(user, i){
         return <li key={i}>
             <NavLink activeClassName="activeLink" to={`/user/${user.id}`}> { user.name }</NavLink>

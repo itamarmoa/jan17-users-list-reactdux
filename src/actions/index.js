@@ -1,6 +1,8 @@
-export const SELECT_USER = "select";
-export const ADD_USER = "add";
-export const REMOVE_USER = "remove";
+export const GET_USER_DETAILS_REQUEST = "get-user-request";
+export const GET_USER_DETAILS_RESPONSE = "get-user-response";
+export const SELECT_USER = "select-user"
+export const ADD_USER = "add-user";
+export const REMOVE_USER = "remove-user";
 export const LOGIN_USER = "login";
 export const LOGOUT_USER = "logout";
 export const GET_USERS_LIST_REQUEST = "get-users-list-request";

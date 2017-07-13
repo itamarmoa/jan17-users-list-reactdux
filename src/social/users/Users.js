@@ -8,10 +8,13 @@ import {Route} from 'react-router';
 import '../../main.scss';
 
 class Users extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render(){
         return (<div>
                     <UsersList />
-                    <Route path="/user/:id" component={UserPage}/>
+                    <Route path="/user/:id" component={UserPage} selectedUser={this.props.selectedUser}/>
                 </div>)
     }
 }

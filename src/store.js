@@ -12,9 +12,10 @@ const state = {
             details: null,
             posts: [
 
-            ]
+            ],
+            isUserLoading: false
         },
-        isUsersListLoading: false
+        isUsersListLoading: false,
     }
 };
 
